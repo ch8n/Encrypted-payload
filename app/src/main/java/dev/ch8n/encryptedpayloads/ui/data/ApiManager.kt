@@ -1,12 +1,8 @@
-package dev.ch8n.encryptedpayloads.ui.data.service
+package dev.ch8n.encryptedpayloads.ui.data
 
 import android.util.Log
-import dev.ch8n.encryptedpayloads.ui.data.Note
 import io.ktor.util.encodeBase64
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -56,7 +52,8 @@ object ApiManager {
                 val encryptionKey = EncryptionService.stringToPublicKey(publicKey)
 
                 // Encrypt the payload
-                val encryptedBodyAsByteArray = EncryptionService.encrypt(originalBodyAsString, encryptionKey)
+                val encryptedBodyAsByteArray =
+                    EncryptionService.encrypt(originalBodyAsString, encryptionKey)
                 val base64Encoded = encryptedBodyAsByteArray.encodeBase64()
 
                 // Create a new request with the encrypted body
@@ -91,24 +88,24 @@ object ApiManager {
 
     interface NoteApiService {
 
-        @GET(ApiManager.EndPoints.GET_NOTES)
+        @GET(EndPoints.GET_NOTES)
         suspend fun getNotes(): List<Note>
 
-        @POST(ApiManager.EndPoints.CREATE_NOTE)
+        @POST(EndPoints.CREATE_NOTE)
         suspend fun createNote(@Body note: Note)
     }
 
     interface EncryptionApiService {
 
-        @GET(ApiManager.EndPoints.GET_KEY)
+        @GET(EndPoints.GET_KEY)
         suspend fun getKey(): Map<String, String>
     }
 
     val notesApiService: NoteApiService by lazy {
-        ApiManager.HttpClient.retrofit.create(NoteApiService::class.java)
+        HttpClient.retrofit.create(NoteApiService::class.java)
     }
 
     val encryptionApiService: EncryptionApiService by lazy {
-        ApiManager.HttpClient.retrofit.create(EncryptionApiService::class.java)
+        HttpClient.retrofit.create(EncryptionApiService::class.java)
     }
 }

@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
-import dev.ch8n.encryptedpayloads.ui.server.EmbeddedServer
+import dev.ch8n.encryptedpayloads.server.EmbeddedServer
 import dev.ch8n.encryptedpayloads.ui.theme.EncryptedPayloadsTheme
 import kotlin.random.Random
 

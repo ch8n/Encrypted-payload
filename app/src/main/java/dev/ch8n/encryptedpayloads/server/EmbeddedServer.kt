@@ -1,11 +1,10 @@
-package dev.ch8n.encryptedpayloads.ui.server
+package dev.ch8n.encryptedpayloads.server
 
 import android.util.Log
-import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import dev.ch8n.encryptedpayloads.ui.data.Note
-import dev.ch8n.encryptedpayloads.ui.data.service.ApiManager
-import dev.ch8n.encryptedpayloads.ui.data.service.EncryptionService
-import dev.ch8n.encryptedpayloads.ui.data.service.InMemoryDB
+import dev.ch8n.encryptedpayloads.ui.data.ApiManager
+import dev.ch8n.encryptedpayloads.ui.data.EncryptionService
+import dev.ch8n.encryptedpayloads.ui.data.InMemoryDB
 import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.gson.gson
 import io.ktor.server.application.Application
@@ -27,12 +26,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
-import java.security.KeyPairGenerator
-import java.security.PrivateKey
-import java.security.PublicKey
-import javax.crypto.Cipher
 import kotlin.coroutines.CoroutineContext
-import kotlin.random.Random
 
 object EmbeddedServer : CoroutineScope {
     private var server: NettyApplicationEngine? = null

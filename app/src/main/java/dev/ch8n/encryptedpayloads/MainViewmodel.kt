@@ -1,8 +1,8 @@
 package dev.ch8n.encryptedpayloads
 
 import dev.ch8n.encryptedpayloads.ui.data.Note
-import dev.ch8n.encryptedpayloads.ui.data.service.ApiManager
-import dev.ch8n.encryptedpayloads.ui.data.service.EncryptionService
+import dev.ch8n.encryptedpayloads.ui.data.ApiManager
+import dev.ch8n.encryptedpayloads.ui.data.EncryptionService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -1,7 +1,6 @@
-package dev.ch8n.encryptedpayloads.ui.data.service
+package dev.ch8n.encryptedpayloads.ui.data
 
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import dev.ch8n.encryptedpayloads.ui.data.Note
 import kotlin.random.Random
 
 object InMemoryDB {
