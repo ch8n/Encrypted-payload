@@ -14,6 +14,25 @@ To achieve this, we have used an `Asymmetric encryption` method to generate publ
 ### Read Implementation Details from [Here](https://chetan-garg36.medium.com/secure-your-network-traffic-encrypt-your-network-requests-e4a5a682c82a)
 
 
+## Structure
+
+```text
+.
+└── encryptedpayloads
+    ├── MainActivity.kt
+    ├── MainViewmodel.kt
+    ├── server
+    │   └── EmbeddedServer.kt
+    └── ui
+        ├── data
+        │   ├── ApiManager.kt
+        │   ├── EncryptionService.kt
+        │   ├── InMemoryDB.kt
+        │   └── Model.kt
+        └── theme 
+```
+
+
 ## MIT License
 Copyright (c) 2021 Chetan Gupta
 
